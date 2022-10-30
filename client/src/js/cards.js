@@ -44,6 +44,7 @@ const fetchCards = async () => {
   for (let data of result) {
     console.log(data);
     card += `
+    <details>
     <div class="card card-rounded col-md-3 m-2">
       <div class="card-header card-rounded">
         <h1>${data.name}</h1>
@@ -57,6 +58,7 @@ const fetchCards = async () => {
         <button class="btn btn-sm btn-danger" id="${data.id}" onclick="deleteCard(this)">Delete</button>
       </div>
     </div>
+    </details>
     `;
   }
 

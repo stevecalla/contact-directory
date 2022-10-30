@@ -1,4 +1,4 @@
-import { postDb, getDb, deleteDb } from './database';
+import { postDb, getDb, deleteDb, putDB } from './database';
 
 const form = document.getElementById('contact-form');
 
@@ -44,21 +44,22 @@ const fetchCards = async () => {
   for (let data of result) {
     console.log(data);
     card += `
-    <details>
     <div class="card card-rounded col-md-3 m-2">
-      <div class="card-header card-rounded">
-        <h1>${data.name}</h1>
-      </div>
+    <div class="card-header card-rounded">
+    <h1>${data.name}</h1>
+    </div>
+    <details>
+      <summary>Contact Info</summary>
       <div class="card-body">
         <p>Home Phone: ${data.home_phone}</p>
         <p>Cell Phone: ${data.cell_phone}</p>
         <p>Email: ${data.email}</p>
       </div>
+    </details>
       <div class="flex-row justify-flex-end p-1">
         <button class="btn btn-sm btn-danger" id="${data.id}" onclick="deleteCard(this)">Delete</button>
       </div>
     </div>
-    </details>
     `;
   }
 

@@ -53,5 +53,15 @@ export const deleteDb = async (id) => {
   return result;
 };
 
+// TODO: BONUS = Complete the putDb() function below:
+// export const putDb = async (id, content) => {
+//   console.log('PUT to the database');
+//   const contactDb = await openDB('contact', 1);
+//   const tx = contactDb.transaction('contact', 'readwrite');
+//   const store = tx.objectStore('contact');
+//   const request = store.put({ id: id, todo: content });
+//   const result = await request;
+//   console.log('🚀 - data saved to the database', result);
+// };
 
 initdb();
